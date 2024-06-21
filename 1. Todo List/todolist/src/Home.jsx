@@ -20,6 +20,7 @@ const Home = () => {
       .catch((err) => console.log(err));
   };
 
+  
   const handleDelete = (id) => {
     axios
       .delete("http://localhost:3001/delete/" + id)

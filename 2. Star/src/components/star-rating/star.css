@@ -1,0 +1,8 @@
+.active{
+    color: yellow;
+    transition: color 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px #FF0000;}
+.inactive{
+    color: black;
+}
+
