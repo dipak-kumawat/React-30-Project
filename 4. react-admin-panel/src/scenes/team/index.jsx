@@ -1,109 +1,138 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
-import { tokens } from "../../theme";
-import { mockDataTeam } from "../../data/mockData";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
-import Header from "../../components/Header";
+import React from "react";
+import styled from "styled-components";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SaveIcon from '@mui/icons-material/Save';
 
-const Team = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const columns = [
-    { field: "id", headerName: "ID" },
-    {
-      field: "name",
-      headerName: "Name",
-      flex: 1,
-      cellClassName: "name-column--cell",
-    },
-    {
-      field: "age",
-      headerName: "Age",
-      type: "number",
-      headerAlign: "left",
-      align: "left",
-    },
-    {
-      field: "phone",
-      headerName: "Phone Number",
-      flex: 1,
-    },
-    {
-      field: "email",
-      headerName: "Email",
-      flex: 1,
-    },
-    {
-      field: "accessLevel",
-      headerName: "Access Level",
-      flex: 1,
-      renderCell: ({ row: { access } }) => {
-        return (
-          <Box
-            width="60%"
-            m="0 auto"
-            p="5px"
-            display="flex"
-            justifyContent="center"
-            backgroundColor={
-              access === "admin"
-                ? colors.greenAccent[600]
-                : access === "manager"
-                ? colors.greenAccent[700]
-                : colors.greenAccent[700]
-            }
-            borderRadius="4px"
-          >
-            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-            {access === "manager" && <SecurityOutlinedIcon />}
-            {access === "user" && <LockOpenOutlinedIcon />}
-            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
-              {access}
-            </Typography>
-          </Box>
-        );
-      },
-    },
-  ];
+const Heading = styled.h1`
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 10px;
+`;
+const Box = styled.div`
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  gap: 15px;
+  flex-wrap: wrap;
+  display: flex;
+`;
+const Post = styled.div`
+  background-color: #1f2a40;
+  border-radius: 5px;
+  /* text-align:center;
+  padding: 5px;
+  width: 250px;
+  overflow:hidden;
+  height: 275px;
+  max-height: 100%;*/
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+`;
+
+const Img = styled.img`
+  width: 175px;
+  margin-top: 5px;
+  height: full;
+  border-radius:5px;
+`;
+const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 10px;
+`;
+
+
+const Paragraph = styled.div`
+  color: #4cceac;
+  margin-top:10px;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  word-wrap: break-word;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  color: #ffffff; /* White text color */
+  align-items: center;
+  justify-content: space-around; /* Adjust space between buttons */
+  gap: 20px; /* Space between buttons */
+  padding: 10px;
+  border-radius: 5px;
+`
+
+const ButtonGreen = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* No underline on the text */
+  font-size: 16px;
+  background-color:green;
+  height: 35px;
+  width: 100px;
+  border-radius:5px;
+  cursor:pointer;
+
+`
+const ButtonRed = styled.div`
+  display: flex;
+  justify-content: center;
+
+  background-color:red;
+  height: 35px;
+  width: 100px;
+  border-radius:5px;
+  cursor:pointer;
+  align-items: center;
+  text-decoration: none; /* No underline on the text */
+  font-size: 16px;
+
+`
+
+const index = () => {
   return (
-    <Box m="20px">
-      <Header title="TEAM" subtitle="Managing the Team Members" />
-      <Box
-        m="40px 0 0 0"
-        height="75vh"
-        sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .name-column--cell": {
-            color: colors.greenAccent[300],
-          },
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: colors.primary[400],
-          },
-          "& .MuiDataGrid-footerContainer": {
-            borderTop: "none",
-            backgroundColor: colors.blueAccent[700],
-          },
-          "& .MuiCheckbox-root": {
-            color: `${colors.greenAccent[200]} !important`,
-          },
-        }}
-      >
-        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
+    <>
+      <Heading>Manage Post</Heading>
+      <Box>
+        <Post>
+          <Img src="../../assets/images.jpeg" />
+          <Title>Post Title</Title>
+          <Paragraph>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
+            sit commodi natus in eligendi? Sapiente dolore architecto
+            reprehenderit inventore maiores eum omnis ad, laboriosam facere est
+            illum voluptatum possimus reiciendis?
+          </Paragraph>
+          <ButtonContainer>
+          <ButtonGreen><EditIcon/> Edit</ButtonGreen>
+          <ButtonRed><DeleteIcon/> Delete</ButtonRed>
+          </ButtonContainer>
+            
+        </Post>
+        <Post>Post 1</Post>
+        <Post>Post 1</Post>
+        <Post>Post 1</Post>
+        <Post>Post 1</Post>
+        <Post>Post 1</Post>
+        <Post>Post 1</Post>
       </Box>
-    </Box>
+    </>
   );
 };
 
-export default Team;
+export default index;
