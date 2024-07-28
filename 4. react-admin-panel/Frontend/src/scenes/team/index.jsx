@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import SaveIcon from '@mui/icons-material/Save';
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+// import SaveIcon from "@mui/icons-material/Save";
+import Header from "../../components/Header";
 
-const Heading = styled.h1`
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: left;
-  padding-left: 10px;
-`;
+
+// const Heading = styled.h1`
+//   font-size: 2rem;
+//   font-weight: 600;
+//   text-align: left;
+//   padding-left: 10px;
+// `;
 const Box = styled.div`
   border-radius: 10px;
   padding: 20px;
@@ -44,22 +46,20 @@ const Post = styled.div`
 `;
 
 const Img = styled.img`
-  width: 175px;
+  width: 200px;
   margin-top: 5px;
   height: full;
-  border-radius:5px;
+  border-radius: 5px;
 `;
 const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
-  text-align: left;
   padding-left: 10px;
 `;
 
-
 const Paragraph = styled.div`
   color: #4cceac;
-  margin-top:10px;
+  margin: 10px 0;
   font-size: 12px;
   font-weight: 400;
   text-align: left;
@@ -74,43 +74,28 @@ const ButtonContainer = styled.div`
   gap: 20px; /* Space between buttons */
   padding: 10px;
   border-radius: 5px;
-`
+`;
 
-const ButtonGreen = styled.div`
+const Button = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none; /* No underline on the text */
   font-size: 16px;
-  background-color:green;
+  background-color: #3e4396;
   height: 35px;
   width: 100px;
-  border-radius:5px;
-  cursor:pointer;
-
-`
-const ButtonRed = styled.div`
-  display: flex;
-  justify-content: center;
-
-  background-color:red;
-  height: 35px;
-  width: 100px;
-  border-radius:5px;
-  cursor:pointer;
-  align-items: center;
-  text-decoration: none; /* No underline on the text */
-  font-size: 16px;
-
-`
+  border-radius: 5px;
+  cursor: pointer;
+`;
 
 const index = () => {
   return (
     <>
-      <Heading>Manage Post</Heading>
+      <Header m="20px" title="DASHBOARD" subtitle="Welcome to your dashboard" />{" "}
       <Box>
         <Post>
-          <Img src="../../assets/images.jpeg" />
+          <Img src="../../assets/elegant-car-event-in-galicia-1228255891611193406.jpeg" />
           <Title>Post Title</Title>
           <Paragraph>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
@@ -119,10 +104,13 @@ const index = () => {
             illum voluptatum possimus reiciendis?
           </Paragraph>
           <ButtonContainer>
-          <ButtonGreen><EditIcon/> Edit</ButtonGreen>
-          <ButtonRed><DeleteIcon/> Delete</ButtonRed>
+            <Button>
+              <EditIcon /> Edit
+            </Button>
+            <Button>
+              <DeleteIcon /> Delete
+            </Button>
           </ButtonContainer>
-            
         </Post>
         <Post>Post 1</Post>
         <Post>Post 1</Post>

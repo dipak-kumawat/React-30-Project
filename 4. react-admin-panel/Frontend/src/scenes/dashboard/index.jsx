@@ -7,6 +7,7 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
 import StatBox from "../../components/StatBox";
+import Upload from "../upload/Upload";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -26,8 +27,7 @@ const Dashboard = () => {
               fontSize: "14px",
               fontWeight: "bold",
               padding: "10px 20px",
-            }}
-          >
+            }}>
             <DownloadOutlinedIcon sx={{ mr: "10px" }} />
             Download Reports
           </Button>
@@ -39,16 +39,14 @@ const Dashboard = () => {
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
-        gap="20px"
-      >
+        gap="20px">
         {/* ROW 1 */}
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
-          justifyContent="center"
-        >
+          justifyContent="center">
           <StatBox
             title="12,361"
             subtitle="Emails Sent"
@@ -66,8 +64,7 @@ const Dashboard = () => {
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
-          justifyContent="center"
-        >
+          justifyContent="center">
           <StatBox
             title="431,225"
             subtitle="Sales Obtained"
@@ -85,8 +82,7 @@ const Dashboard = () => {
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
-          justifyContent="center"
-        >
+          justifyContent="center">
           <StatBox
             title="32,441"
             subtitle="New Clients"
@@ -104,8 +100,7 @@ const Dashboard = () => {
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
-          justifyContent="center"
-        >
+          justifyContent="center">
           <StatBox
             title="1,325,134"
             subtitle="Traffic Received"
@@ -118,12 +113,8 @@ const Dashboard = () => {
             }
           />
         </Box>
-
-
-
-
- 
       </Box>
+      <Upload />
     </Box>
   );
 };
