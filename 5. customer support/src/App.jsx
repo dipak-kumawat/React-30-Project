@@ -3,8 +3,8 @@ import React from "react";
 import Landing from "./components/Landing";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Ticket from "./components/Ticket";
 import ShowTickets from "./components/ShowTickets";
+import Table from "./components/Table";
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/addTicket" element={<Ticket />} />
           <Route path="/showticket" element={<ShowTickets />} />
+          <Route path="/table" element={<Table />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -17,8 +17,11 @@ const Jumbotron = styled.div`
 const Button = styled.button`
   padding: 10px 20px;
   margin: 10px;
-  background-color: #4caf50;
-  color: white;
+  background-color: #007bff;
+
+  &:hover {
+    background-color: #0056b3;
+  }  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;

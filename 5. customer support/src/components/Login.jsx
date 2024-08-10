@@ -31,8 +31,11 @@ const Input = styled.input`
 
 const Button = styled.button`
   padding: 10px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: #007bff;
+
+  &:hover {
+    background-color: #0056b3;
+  }  color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
